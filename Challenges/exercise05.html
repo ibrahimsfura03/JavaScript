@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JavaScript Fundamentals – Part 1</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Exercise – 05 <br>
+      Gymnastic Teams
+    </h1>
+    <script>
+      //using arrow function to calculate the avvrage
+      const calcAvearge = (firstScor, secondScore, thirdScore)  => (firstScor + secondScore + thirdScore) / 3;
+      // console.log(calcAvearge(10, 10, 10));
+
+      //Test data one
+      let dolphinsScore = calcAvearge(44, 23, 71);
+      let koalasScore = calcAvearge(65, 54, 49);
+      // console.log(dolphinsScore, koalasScore)
+
+      const checkWinner = (dolphinsScore, koalasScore) => {
+        if(dolphinsScore >= koalasScore * 2){
+          return `Dolphins won with ${dolphinsScore} ponts`;
+        }else if(koalasScore >= dolphinsScore * 2){
+          return `Koalas won with ${koalasScore} ponts`;
+        }else{
+          return `No team wins :(`;
+        }
+      }
+
+      console.log(checkWinner(dolphinsScore, koalasScore));
+
+      //Test data two
+      dolphinsScore = calcAvearge(85, 54, 41);
+      koalasScore = calcAvearge(23, 34, 27);
+
+      console.log(checkWinner(dolphinsScore, koalasScore))
+      
+    </script>
+</html>
