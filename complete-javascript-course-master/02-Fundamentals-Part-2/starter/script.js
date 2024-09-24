@@ -211,7 +211,7 @@ const ibrahim = {
 };
 console.log(ibrahim);
 console.log(ibrahim.firstName);
-console.log(ibrahim['lastName']);
+console.log(ibrahim['lastNames']);
 
 const nameKey = 'Name';
 console.log(ibrahim['first' + nameKey]);
