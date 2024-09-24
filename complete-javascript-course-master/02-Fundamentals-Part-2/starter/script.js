@@ -157,8 +157,6 @@ const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[2]), calcAge(y
 console.log(ages);
 
 
-
-*/
 ///Array methods
 const freinds = [];
 
@@ -197,3 +195,28 @@ if(freinds.includes('Teryx')){
     console.log("You have a freind called Teryx");
 }
 
+
+
+*/
+//////////////////////////////////////////////
+///Objects 
+
+const ibrahim = {
+    firstName: 'Ibrahim',
+    lastName: 'Suleiman',
+    age: 2030 - 2001,
+    job: 'Student',
+    isMaried: false,
+    friensds: ['teryx', 'zenithol', 'flux', 'webar']
+};
+console.log(ibrahim);
+console.log(ibrahim.firstName);
+console.log(ibrahim['lastName']);
+
+const nameKey = 'Name';
+console.log(ibrahim['first' + nameKey]);
+console.log(ibrahim['last' + nameKey]);
+
+const intrestedIn = prompt("What did you wanna know about ibrahim? ");
+
+console.log(intrestedIn(ibrahim.job));
