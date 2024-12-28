@@ -1,7 +1,6 @@
 /////////////////////////////////////////////////////////
 ///Strict mode
-'use strict';
-
+"use strict";
 
 /*
 
@@ -195,9 +194,6 @@ if(freinds.includes('Teryx')){
     console.log("You have a freind called Teryx");
 }
 
-
-
-*/
 //////////////////////////////////////////////
 ///Objects 
 
@@ -205,9 +201,9 @@ const ibrahim = {
     firstName: 'Ibrahim',
     lastName: 'Suleiman',
     age: 2030 - 2001,
-    job: 'Student',
+    job: 'enterprenuer',
     isMaried: false,
-    friensds: ['teryx', 'zenithol', 'flux', 'webar']
+    friends: ['teryx', 'zenithol', 'flux', 'webar']
 };
 console.log(ibrahim);
 console.log(ibrahim.firstName);
@@ -219,4 +215,141 @@ console.log(ibrahim['last' + nameKey]);
 
 const intrestedIn = prompt("What did you wanna know about ibrahim? ");
 
-console.log(intrestedIn(ibrahim.job));
+if(ibrahim[intrestedIn]){
+    console.log(ibrahim[intrestedIn]);
+}else{
+    console.log("Wrong parameter ");
+}
+
+ibrahim.location = "Nigeria";
+ibrahim['twitter'] = "ibrahimsfura";
+
+console.log(ibrahim)
+
+//Chanllenge
+
+let freindsCount = ibrahim.friends.length;
+const aboutIbrahim = ibrahim.firstName + ` has ${freindsCount} freinds and his best freind is called ` + ibrahim.friends[0];
+console.log(aboutIbrahim);
+
+/////////////Methods in objects (Functions)
+const ibrahim = {
+    firstName: 'Ibrahim',
+    lastName: 'Suleiman',
+    birthYear: 2001,
+    job: 'enterprenuer',
+    isMaried: false,
+    friends: ['teryx', 'zenithol', 'flux', 'webar'],
+
+    calcAge: function(){
+        return 2037 - this.birthYear;
+    },
+
+    // calcAge: function() {
+    //     this.age = 2037 - this.birthYear;
+    //     return this.age;
+    // }
+   heIsMarried: function(){
+    if(ibrahim.isMaried == true){
+       return "he is married";
+    }else{
+       return "he is not married"
+    }
+   }
+};
+
+console.log(ibrahim.calcAge());
+
+
+///Challenge 
+//Ibrahim is a 36 year old enterprenuer, and he is not married
+
+
+console.log(`${ibrahim.firstName} is a ${ibrahim.calcAge()} year old ${ibrahim.job}, and ${ibrahim.heIsMarried()}`);
+
+
+//////////////////////////////////////////////////////////////
+///Iterations For loop
+
+// for(let i = 1; i<= 4; i++){
+//     console.log(`Lifting weights repetion ${i}`);
+// }
+
+const ibrahim = [
+    'Ibrahim',
+    'suleiman',
+    2030-2002,
+    'student',
+    ['Teryx', 'Zenothal', 'Flux', 'Lambda'],
+    false
+];
+
+const types = [];
+
+for(let i = 0; i < ibrahim.length; i++){
+    console.log(ibrahim[i], typeof ibrahim[i]);
+
+    // types[i] = typeof ibrahim[i];
+    types.push(typeof ibrahim[i]);
+}
+console.log(types);
+
+let years = [1959, 1978, 1999, 2001, 2003];
+let ages = [];
+
+for(let i = 0; i <= years.length; i++){
+     ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+console.log("____ONLY STRINGS____")
+for(let i = 0; i < ibrahim.length; i++){
+    if(typeof ibrahim[i] !== 'string') continue;
+    console.log(ibrahim[i]);
+}
+
+///Reversing and Nasted Loops
+const ibrahim = [
+    'Ibrahim',
+    'suleiman',
+    2030-2002,
+    'student',
+    ['Teryx', 'Zenothal', 'Flux', 'Lambda'],
+    true
+];
+
+for(let i = ibrahim.length - 1; i >= 0; i--){
+    console.log(ibrahim[i]);
+}
+
+for(let i = 1; i < 4; i++){
+    console.log(`-------- Starting excercise ${i}`);
+ 
+    for(let j = 1; j <= 5; j++){
+        console.log(`Exercise ${i}: Lifting weight repetion ${j}`)
+    }
+}
+    
+
+
+/////////////////////////////////////////////////////////
+///While Loops
+
+let i = 1;
+while(i <= 10){
+    console.log(`HWILE: Lifting weights repetion ${i}`);
+    i++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6){
+    console.log(`You rolled a: ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if(dice === 6) console.log(`Loop is ending....`); 
+}
+    
+
+*/
+
+const xyzabc = 23;
+console.log("xyzabc");
