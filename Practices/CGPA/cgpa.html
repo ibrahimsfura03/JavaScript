@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGPA</title>
+    <link rel="stylesheet" href="cgpa.css" />
+    <style></style>
+  </head>
+  <body>
+    <main>
+      <div class="cgpa-body">
+        <div class="calc-header">
+          <div class="myReadOnly">
+            <span class="content"> CGPA: </span>
+          </div>
+        </div>
+        <div class="cgpa-main">
+          <table>
+            <thead>
+              <td>S/N</td>
+              <td>Subjects</td>
+              <td>Grade</td>
+              <td>Credit Unit</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input type="text" class="dataFielsd" />
+                </td>
+                <td>
+                  <input type="text" class="dataFielsd" />
+                </td>
+                <td>
+                  <input type="number" class="dataFielsd creditUnit" />
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <input type="text" class="dataFielsd" />
+                </td>
+                <td>
+                  <input type="text" class="dataFielsd" />
+                </td>
+                <td>
+                  <input type="number" class="dataFielsd creditUnit" />
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  <input type="text" class="dataFielsd" />
+                </td>
+                <td>
+                  <input type="text" class="dataFielsd" />
+                </td>
+                <td>
+                  <input type="number" class="dataFielsd creditUnit" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="credit-unit">
+            <label for="credit-unit">Input Previous GPA`s</label><br />
+            <input type="number" class="credit-unit-input" />
+          </div>
+          <div class="cgpa-footer">
+            <button class="add-fiealds">Add More Fieald</button>
+
+            <button class="calculate">Calculate CGPA</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="cgpa.js"></script>
+  </body>
+</html>

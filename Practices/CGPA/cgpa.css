@@ -1,0 +1,86 @@
+body {
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to top left, #28b487, #7dd56f);
+}
+
+/* * {
+    border: 1px solid red;
+  } */
+main {
+  width: 60%;
+  margin: auto;
+}
+.cgpa-body {
+  padding: 5%;
+  background-color: #e6e4e2;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+}
+.cgpa-header {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.myReadOnly {
+  width: 95.4%;
+  padding: 5% 2%;
+  height: 60px;
+  font-size: 50px;
+  border: 2px solid #82d78c;
+}
+.myReadOnly:hover {
+  border: 2px solid #82d78c;
+}
+.eeeeeeee {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+}
+table {
+  width: 100%;
+}
+thead {
+  width: 100%;
+}
+.dataFielsd {
+  width: 95%;
+  padding: 3% 2%;
+  border: 2px solid #82d78c;
+  margin: 3px 3px 15px 0px;
+}
+.credit-unit {
+  width: 90%;
+  margin: auto;
+  margin: 0% 5%;
+}
+.credit-unit-input {
+    margin-top: 10px;
+  width: 100%;
+  padding: 1% 2%;
+  border: 2px solid #82d78c;
+}
+.cgpa-footer {
+  margin: 20px 15px;
+}
+.add-fiealds {
+  display: inline;
+  padding: 10px;
+  background-color: #403f3e;
+  border: none;
+  color: white;
+}
+.calculate {
+  display: inline;
+  float: right;
+  padding: 10px;
+  background-color: #82d78c;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    margin-top: 2%;
+    width: 100%;
+  }
+}
