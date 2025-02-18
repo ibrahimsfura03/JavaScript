@@ -113,6 +113,41 @@ a:visited {
   font-weight: 800;
 }
 
+.workout__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / -1;
+}
+
+.workout__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.workout__btn {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.7rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.workout__btn--edit {
+  background-color: var(--color-brand--1);
+  color: #fff;
+}
+
+.workout__btn--delete {
+  background-color: var(--color-danger, red);
+  color: #fff;
+}
+
+.workout__btn:hover {
+  opacity: 0.85;
+}
+
 .form {
   background-color: var(--color-dark--2);
   border-radius: 5px;
