@@ -7,8 +7,8 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
-const workoutEdit = document.querySelector('.workout__btn--edit');
-const workoutDelete = document.querySelector('.workout__btn--delete');
+const editBtn = document.querySelector('.workout__btn--edit');
+const deleteBtn = document.querySelector('.workout__btn--delete');
 
 class workout {
   date = new Date();
