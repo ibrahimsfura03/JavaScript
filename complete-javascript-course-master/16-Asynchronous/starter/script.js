@@ -213,14 +213,68 @@ btn.addEventListener('click', () => {
   getCountryData('portugal');
 });
 
-  */
+////////////////////////////////////////////////////////////////////
+///Prosifying
 
 const lotteryPromise = new Promise(function (resolve, reject) {
-  if (Math.random() >= 0.5) {
-    resolve('You win :)');
-  } else {
-    reject('You lost your money :(');
-  }
+  console.log('Lottery draw is happening!!!...');
+  setTimeout(() => {
+    if (Math.random() >= 0.5) {
+      resolve('You win :)');
+    } else {
+      reject(new Error('You lost your money :('));
+    }
+  }, 2000);
 });
 
-lotteryPromise
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
+
+const wait = seconds => {
+  return new Promise(resolve => {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+wait(2)
+  .then(() => {
+    console.log('I waited for 2 seconds');
+    return wait(1);
+  })
+  .then(() => {
+    console.log('I waited for 1 second');
+  });
+
+Promise.resolve('abc').then(x => console.log(x));
+Promise.reject(new Error('abc error')).catch(x => console.error(x));
+
+
+////////////////////////////////////////////////////////////////////
+///Prosifying geolocation app
+
+const getPositon = function () {
+  return new Promise(function (resolve, reject) {
+    // navigator.geolocation.getCurrentPosition(
+    //   position => resolve(position),
+    //   err => reject(err)
+    // );
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+getPositon().then(pos => console.log(pos));
+
+
+  */
+
+const whereAmI = async function (country) {
+  // const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+  // console.log(res);
+
+  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+  const data = await res.json();
+  console.log(data);
+  renderCountry(data[0]);
+};
+
+whereAmI('Nigeria');
+console.log('FIRST');
