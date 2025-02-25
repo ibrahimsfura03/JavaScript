@@ -264,17 +264,80 @@ const getPositon = function () {
 getPositon().then(pos => console.log(pos));
 
 
-  */
-
 const whereAmI = async function (country) {
-  // const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
-  // console.log(res);
+  try {
+    // const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+    // console.log(res);
 
-  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
-  const data = await res.json();
-  console.log(data);
-  renderCountry(data[0]);
+    const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+    const data = await res.json();
+    console.log(data);
+    renderCountry(data[0]);
+
+    return `You are in ${data.city}, and ${data.country}`;
+  } catch (err) {
+    console.error(err);
+    renderError(err.message);
+  }
 };
 
-whereAmI('Nigeria');
-console.log('FIRST');
+console.log('1: will get location');
+const city = whereAmI('portugal');
+console.log(city);
+console.log('3: will finished getting location');
+
+
+const get3Countries = async (c1, c2, c3) => {
+  try {
+    // const [data1] = await getJSON(`https://restcountries.com/v3.1/name/${c1}`);
+    // const [data2] = await getJSON(`https://restcountries.com/v3.1/name/${c2}`);
+    // const [data3] = await getJSON(`https://restcountries.com/v3.1/name/${c3}`);
+    // console.log(data1.capital, data2.capital, data3.capital);
+
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v3.1/name/${c1}`),
+      getJSON(`https://restcountries.com/v3.1/name/${c2}`),
+      getJSON(`https://restcountries.com/v3.1/name/${c3}`),
+    ]);
+
+    console.log(data.map(d => d[0].capital));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+get3Countries('portugal', 'nigeria', 'argentina');
+
+
+  */
+//////////////////////////////////////////////////////////////////////
+///Promises combinators
+
+////Race
+
+(async () => {
+  const res = await Promise.race([
+    getJSON(`https://restcountries.com/v3.1/name/italy`),
+    getJSON(`https://restcountries.com/v3.1/name/portugal`),
+    getJSON(`https://restcountries.com/v3.1/name/mexico`),
+  ]);
+  console.log(res[0]);
+})();
+
+////allSettled
+
+Promise.allSettled([
+  Promise.resolve('Succes'),
+  Promise.reject('Error'),
+  Promise.resolve('Another Sccess'),
+]).then(res => console.log(res));
+
+////Any
+
+Promise.any([
+  getJSON(`https://restcountries.com/v3.1/name/italy`),
+  getJSON(`https://restcountries.com/v3.1/name/portugal`),
+  getJSON(`https://restcountries.com/v3.1/name/mexico`),
+])
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
